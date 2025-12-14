@@ -12,7 +12,7 @@ class bmu_xor_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_lxor = 1; item.ap_zbb = 0;
-    item.a_in = 32'h00000000; item.b_in = 32'h0;
+    item.a_in = 32'h00000000; item.b_in = 32'h00000000;
     item.operation_name = "XOR";
     start_item(item); finish_item(item);
     
@@ -24,13 +24,37 @@ class bmu_xor_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_lxor = 1; item.ap_zbb = 0;
-    item.a_in = 32'h7FFFFFFF; item.b_in = 32'h7FFFFFFF;
+    item.a_in = 32'h12345678; item.b_in = 32'h12345678;
     item.operation_name = "XOR";
     start_item(item); finish_item(item);
     
     item = create_clean_item();
     item.ap_lxor = 1; item.ap_zbb = 0;
-    item.a_in = 32'h80000000; item.b_in = 32'h80000000;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 32'h55555555;
+    item.operation_name = "XOR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lxor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'h00000000;
+    item.operation_name = "XOR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lxor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'hFFFFFFFF;
+    item.operation_name = "XOR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lxor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h7FFFFFFF; item.b_in = 32'h12345678;
+    item.operation_name = "XOR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lxor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h80000000; item.b_in = 32'hAAAAAAAA;
     item.operation_name = "XOR";
     start_item(item); finish_item(item);
     

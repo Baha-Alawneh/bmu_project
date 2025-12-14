@@ -10,16 +10,39 @@ class bmu_or_sequence extends bmu_base_sequence;
     
     `uvm_info(get_type_name(), "Executing OR Sequence", UVM_LOW)
     
-    
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 0;
-    item.a_in = 32'h00000000; item.b_in = 32'h0;
+    item.a_in = 32'h00000000; item.b_in = 32'h00000000;
     item.operation_name = "OR";
     start_item(item); finish_item(item);
     
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 0;
     item.a_in = 32'hFFFFFFFF; item.b_in = 32'hFFFFFFFF;
+    item.operation_name = "OR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'h00000000;
+    item.operation_name = "OR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 0;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 32'h55555555;
+    item.operation_name = "OR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'h12345678;
+    item.operation_name = "OR";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'hEDCBA987;
     item.operation_name = "OR";
     start_item(item); finish_item(item);
     
@@ -43,15 +66,13 @@ class bmu_or_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 0;
-    item.a_in = 32'h0000ABCD; 
-    item.b_in = 32'h00005678; 
+    item.a_in = 32'h0000ABCD; item.b_in = 32'h00005678;
     item.operation_name = "OR";
     start_item(item); finish_item(item);
     
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 0;
-    item.a_in = 32'h12345678; 
-    item.b_in = 32'h56789ABC;
+    item.a_in = 32'h12345678; item.b_in = 32'h56789ABC;
     item.operation_name = "OR";
     start_item(item); finish_item(item);
     

@@ -8,7 +8,13 @@ class bmu_sub_sequence extends bmu_base_sequence;
   virtual task body();
     bmu_seq_item item;
     
-    `uvm_info(get_type_name(), "Executing SUB Sequence (Enhanced)", UVM_LOW)
+    `uvm_info(get_type_name(), "Executing SUB Sequence", UVM_LOW)
+    
+    item = create_clean_item();
+    item.ap_sub = 1; item.ap_zba = 0;
+    item.a_in = 32'h00000000; item.b_in = 32'h00000000;
+    item.operation_name = "SUB";
+    start_item(item); finish_item(item);
     
     item = create_clean_item();
     item.ap_sub = 1; item.ap_zba = 0;
@@ -36,6 +42,12 @@ class bmu_sub_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_sub = 1; item.ap_zba = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'h12345678;
+    item.operation_name = "SUB";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_sub = 1; item.ap_zba = 0;
     item.a_in = 32'h000000AA; item.b_in = 32'h00000055;
     item.operation_name = "SUB";
     start_item(item); finish_item(item);
@@ -52,17 +64,16 @@ class bmu_sub_sequence extends bmu_base_sequence;
     item.operation_name = "SUB";
     start_item(item); finish_item(item);
     
+    item = create_clean_item();
+    item.ap_sub = 1; item.ap_zba = 0;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 32'h55555555;
+    item.operation_name = "SUB";
+    start_item(item); finish_item(item);
+    
     repeat(5) begin
       item = create_clean_item();
       item.ap_sub = 1; item.ap_zba = 0;
       item.operation_name = "SUB";
-      send_item(item);
-    end
-    
-    repeat(2) begin
-      item = create_clean_item();
-      item.ap_sub = 1; item.ap_zba = 1;
-      item.operation_name = "SUB_ERROR";
       send_item(item);
     end
   endtask

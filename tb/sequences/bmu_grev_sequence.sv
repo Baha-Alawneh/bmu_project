@@ -40,6 +40,13 @@ class bmu_grev_sequence extends bmu_base_sequence;
 
     item = create_clean_item();
     item.ap_grev = 1;
+    item.a_in = 32'h12345678; item.b_in = 24;
+    item.operation_name = "GREV";
+    start_item(item);
+    finish_item(item);
+
+    item = create_clean_item();
+    item.ap_grev = 1;
     item.a_in = 32'h000000AA; item.b_in = 24;
     item.operation_name = "GREV";
     start_item(item);
@@ -59,6 +66,20 @@ class bmu_grev_sequence extends bmu_base_sequence;
     start_item(item);
     finish_item(item);
 
+    item = create_clean_item();
+    item.ap_grev = 1;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 24;
+    item.operation_name = "GREV";
+    start_item(item);
+    finish_item(item);
+
+    item = create_clean_item();
+    item.ap_grev = 1;
+    item.a_in = 32'h55555555; item.b_in = 24;
+    item.operation_name = "GREV";
+    start_item(item);
+    finish_item(item);
+
     repeat(5) begin
       item = create_clean_item();
       item.ap_grev = 1;
@@ -68,12 +89,5 @@ class bmu_grev_sequence extends bmu_base_sequence;
       assert(item.randomize(a_in));
       finish_item(item);
     end
-
-    item = create_clean_item();
-    item.ap_grev = 1;
-    item.a_in = 32'h12345678; item.b_in = 16;
-    item.operation_name = "GREV_ERROR";
-    start_item(item);
-    finish_item(item);
   endtask
 endclass

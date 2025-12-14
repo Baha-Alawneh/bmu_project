@@ -12,6 +12,12 @@ class bmu_slt_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_slt = 1; item.ap_sub = 1; item.ap_unsign = 0;
+    item.a_in = 32'h00000000; item.b_in = 32'h00000000;
+    item.operation_name = "SLT";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_slt = 1; item.ap_sub = 1; item.ap_unsign = 0;
     item.a_in = 32'h00000000; item.b_in = 32'h00000001;
     item.operation_name = "SLT";
     send_item(item);
@@ -36,6 +42,12 @@ class bmu_slt_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_slt = 1; item.ap_sub = 1; item.ap_unsign = 0;
+    item.a_in = 32'h12345678; item.b_in = 32'h12345678;
+    item.operation_name = "SLT";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_slt = 1; item.ap_sub = 1; item.ap_unsign = 0;
     item.a_in = 32'h000000AA; item.b_in = 32'h000000FF;
     item.operation_name = "SLT";
     send_item(item);
@@ -49,6 +61,12 @@ class bmu_slt_sequence extends bmu_base_sequence;
     item = create_clean_item();
     item.ap_slt = 1; item.ap_sub = 1; item.ap_unsign = 0;
     item.a_in = 32'h33333333; item.b_in = 32'h66666666;
+    item.operation_name = "SLT";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_slt = 1; item.ap_sub = 1; item.ap_unsign = 0;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 32'h55555555;
     item.operation_name = "SLT";
     send_item(item);
     

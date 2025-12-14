@@ -24,13 +24,37 @@ class bmu_orn_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h7FFFFFFF; item.b_in = 32'h7FFFFFFF;
+    item.a_in = 32'h12345678; item.b_in = 32'h00000000;
     item.operation_name = "ORN";
     start_item(item); finish_item(item);
     
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h80000000; item.b_in = 32'h80000000;
+    item.a_in = 32'h12345678; item.b_in = 32'hFFFFFFFF;
+    item.operation_name = "ORN";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 1;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 32'h55555555;
+    item.operation_name = "ORN";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 1;
+    item.a_in = 32'h12345678; item.b_in = 32'hEDCBA987;
+    item.operation_name = "ORN";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 1;
+    item.a_in = 32'h7FFFFFFF; item.b_in = 32'h12345678;
+    item.operation_name = "ORN";
+    start_item(item); finish_item(item);
+    
+    item = create_clean_item();
+    item.ap_lor = 1; item.ap_zbb = 1;
+    item.a_in = 32'h80000000; item.b_in = 32'hAAAAAAAA;
     item.operation_name = "ORN";
     start_item(item); finish_item(item);
     
@@ -49,48 +73,6 @@ class bmu_orn_sequence extends bmu_base_sequence;
     item = create_clean_item();
     item.ap_lor = 1; item.ap_zbb = 1;
     item.a_in = 32'hCAFEBABE; item.b_in = 32'h13579BDF;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'h00000000;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'hFFFFFFFF;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'h7FFFFFFF;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'h80000000;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'h000000FF;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'h0000ABCD;
-    item.operation_name = "ORN";
-    start_item(item); finish_item(item);
-    
-    item = create_clean_item();
-    item.ap_lor = 1; item.ap_zbb = 1;
-    item.a_in = 32'h12345678; item.b_in = 32'h98765432;
     item.operation_name = "ORN";
     start_item(item); finish_item(item);
     

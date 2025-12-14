@@ -52,6 +52,36 @@ class bmu_ctz_sequence extends bmu_base_sequence;
     item.operation_name = "CTZ";
     send_item(item);
     
+    item = create_clean_item();
+    item.ap_ctz = 1;
+    item.a_in = 32'h00000001;
+    item.operation_name = "CTZ";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_ctz = 1;
+    item.a_in = 32'h00000002;
+    item.operation_name = "CTZ";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_ctz = 1;
+    item.a_in = 32'h00008000;
+    item.operation_name = "CTZ";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_ctz = 1;
+    item.a_in = 32'hAAAAAAAA;
+    item.operation_name = "CTZ";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_ctz = 1;
+    item.a_in = 32'h55555555;
+    item.operation_name = "CTZ";
+    send_item(item);
+    
     repeat(5) begin
       item = create_clean_item();
       item.ap_ctz = 1;

@@ -52,6 +52,24 @@ class bmu_sext_b_sequence extends bmu_base_sequence;
     item.operation_name = "SEXT_B";
     send_item(item);
     
+    item = create_clean_item();
+    item.ap_siext_b = 1;
+    item.a_in = 32'h12345601;
+    item.operation_name = "SEXT_B";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_siext_b = 1;
+    item.a_in = 32'h123456FF;
+    item.operation_name = "SEXT_B";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_siext_b = 1;
+    item.a_in = 32'hABCDEF81;
+    item.operation_name = "SEXT_B";
+    send_item(item);
+    
     repeat(5) begin
       item = create_clean_item();
       item.ap_siext_b = 1;

@@ -12,13 +12,25 @@ class bmu_pack_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_pack = 1;
+    item.a_in = 32'h00000000; item.b_in = 32'h00000000;
+    item.operation_name = "PACK";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_pack = 1;
+    item.a_in = 32'hFFFFFFFF; item.b_in = 32'hFFFFFFFF;
+    item.operation_name = "PACK";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_pack = 1;
     item.a_in = 32'h00000000; item.b_in = 32'h12345678;
     item.operation_name = "PACK";
     send_item(item);
     
     item = create_clean_item();
     item.ap_pack = 1;
-    item.a_in = 32'hFFFFFFFF; item.b_in = 32'h12345678;
+    item.a_in = 32'h12345678; item.b_in = 32'h00000000;
     item.operation_name = "PACK";
     send_item(item);
     
@@ -49,6 +61,12 @@ class bmu_pack_sequence extends bmu_base_sequence;
     item = create_clean_item();
     item.ap_pack = 1;
     item.a_in = 32'hAABBCCDD; item.b_in = 32'h11223344;
+    item.operation_name = "PACK";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_pack = 1;
+    item.a_in = 32'hAAAAAAAA; item.b_in = 32'h55555555;
     item.operation_name = "PACK";
     send_item(item);
     

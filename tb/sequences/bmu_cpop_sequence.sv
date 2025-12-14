@@ -36,6 +36,30 @@ class bmu_cpop_sequence extends bmu_base_sequence;
     
     item = create_clean_item();
     item.ap_cpop = 1;
+    item.a_in = 32'h00000001;
+    item.operation_name = "CPOP";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_cpop = 1;
+    item.a_in = 32'h00000003;
+    item.operation_name = "CPOP";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_cpop = 1;
+    item.a_in = 32'hAAAAAAAA;
+    item.operation_name = "CPOP";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_cpop = 1;
+    item.a_in = 32'h55555555;
+    item.operation_name = "CPOP";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_cpop = 1;
     item.a_in = 32'h000000AA;
     item.operation_name = "CPOP";
     send_item(item);
@@ -49,6 +73,12 @@ class bmu_cpop_sequence extends bmu_base_sequence;
     item = create_clean_item();
     item.ap_cpop = 1;
     item.a_in = 32'h55AA55AA;
+    item.operation_name = "CPOP";
+    send_item(item);
+    
+    item = create_clean_item();
+    item.ap_cpop = 1;
+    item.a_in = 32'h01010101;
     item.operation_name = "CPOP";
     send_item(item);
     
