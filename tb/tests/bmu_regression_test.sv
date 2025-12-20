@@ -6,7 +6,6 @@ class bmu_regression_test extends bmu_base_test;
     super.new(name, parent);
   endfunction
 
-  bmu_reset_sequence reset_seq;
   
   bmu_or_sequence   or_seq;
   bmu_orn_sequence  orn_seq;
@@ -41,7 +40,7 @@ class bmu_regression_test extends bmu_base_test;
     super.build_phase(phase);
     
     
-    reset_seq = bmu_reset_sequence::type_id::create("reset_seq");
+   
     
     or_seq   = bmu_or_sequence::type_id::create("or_seq");
     orn_seq  = bmu_orn_sequence::type_id::create("orn_seq");
@@ -78,7 +77,6 @@ class bmu_regression_test extends bmu_base_test;
     
     `uvm_info(get_type_name(), "REGRESSION TEST STARTED", UVM_LOW)
     
-    reset_seq.start(env.agent.sequencer);
     
     `uvm_info(get_type_name(), "Testing Logical Operations", UVM_LOW)
     or_seq.start(env.agent.sequencer);
